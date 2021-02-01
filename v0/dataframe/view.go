@@ -63,13 +63,13 @@ func (df *DataFrame) SliceView(from int, to int) *DataFrame {
 // To avoid unnecessary allocations, please get a pre-allocated mask from
 // DataFrame.EmptyMask() or DataFrame.ZeroMask().
 // MaskView is functionally equivalent to:
-// indices = make([]int, 0)
-// for i, b := mask {
-//   if b {
+//  indices = make([]int, 0)
+//  for i, b := mask {
+//    if b {
 //      indices = append(indices, i)
-//   }
-// }
-// maskedView := df.IndexView(indices)
+//    }
+//  }
+//  maskedView := df.IndexView(indices)
 func (df *DataFrame) MaskView(mask []bool) *DataFrame {
   result := df.View()
   result.indices = make([]int, len(mask))
@@ -129,9 +129,9 @@ func (df *DataFrame) ColumnView(columns ...string) *DataFrame {
 
 // ShuffleView randomizes the dataframe.
 // This is functionally equivalent to this pseudo-code:
-// indices = range(0, df.NumRows())
-// shuffle(indices)
-// shuffledView = df.IndexView(indices)
+//  indices = range(0, df.NumRows())
+//  shuffle(indices)
+//  shuffledView = df.IndexView(indices)
 // If you want ShuffleView to behave deterministically, you need to call
 // rand.Seed(seed) somewhere in your program prior to calling ShuffleView.
 func (df *DataFrame) ShuffleView() *DataFrame {
@@ -143,7 +143,7 @@ func (df *DataFrame) ShuffleView() *DataFrame {
 // SampleView randomly samples n rows from the dataframe.
 // Sampling with replacement is not yet supported.
 // Sampling without replacement is functionally equivalent to:
-// df.ShuffleView().SliceView(0, n)
+//  df.ShuffleView().SliceView(0, n)
 func (df *DataFrame) SampleView(n int, replacement bool) *DataFrame {
   if replacement {
     panic("replacement is not supported yet")
@@ -387,8 +387,8 @@ func (df *DataFrame) HashStringsView(columns ...string) *DataFrame {
 // altering the original data from some parent dataframe.
 // It will perform a copy only if the data is shared.
 // This is useful when you execute a function that changes the data in-place:
-// view := df.DetachedView("height")
-// view.OverwriteFloats64("height", []float64{173, 174, 162, 185})
+//  view := df.DetachedView("height")
+//  view.OverwriteFloats64("height", []float64{173, 174, 162, 185})
 // Caveat: this can be an expensive action if the data that backs up the
 // dataframe is large, even though the dataframe at hand hasn't many rows.
 func (df *DataFrame) DetachedView(columns ...string) *DataFrame {
@@ -401,11 +401,11 @@ func (df *DataFrame) DetachedView(columns ...string) *DataFrame {
 
 // View makes the shallowest copy of the dataframe.
 // It is roughly equivalent to:
-// copy := *df
+//  copy := *df
 // Use this function when you want to transform an in-place operation into
 // a view operation, e.g.:
-// view := df.View()
-// view.AllocateFloats("height")
+//  view := df.View()
+//  view.AllocateFloats("height")
 func (df *DataFrame) View() *DataFrame {
   result := *df
   result.sharedMaps = true

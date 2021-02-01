@@ -12,7 +12,7 @@ import (
 // It doesn't print the data.
 // Everything is printed on stdout. Nothing on stderr.
 // PrintSummary returns the dataframe itself so you can write
-// df.PrintSummary().PrintHead(n, "") or df.PrintHead(n, "").PrintSummary()
+//  df.PrintSummary().PrintHead(n, "") or df.PrintHead(n, "").PrintSummary()
 func (df *DataFrame) PrintSummary() *DataFrame {
   if len(df.floats) > 0 {
     cols := df.FloatHeader().NameList()
@@ -62,7 +62,7 @@ func (df *DataFrame) PrintSummary() *DataFrame {
 // floatFormat defaults to %.3f
 // Everything is printed on stdout. Nothing on stderr.
 // PrintHead returns the dataframe itself so you can write
-// df.PrintSummary().PrintHead(n, "") or df.PrintHead(n, "").PrintSummary()
+//  df.PrintSummary().PrintHead(n, "") or df.PrintHead(n, "").PrintSummary()
 func (df *DataFrame) PrintHead(n int, floatFormat string) *DataFrame {
   if n < 0 || n > len(df.indices) {
     n = df.NumRows()

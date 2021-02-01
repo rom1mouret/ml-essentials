@@ -41,13 +41,13 @@ func EmptyDataFrame(nRows int, maxCPU int) *DataFrame {
 // ZeroMask returns a possibly pre-allocated mask for the MaskView function.
 // The values of the mask are all initialized to false.
 // Intended use:
-// m := df.ZeroMask()
-// for i := 0; i < df.NumRows(); i++ {
+//  m := df.ZeroMask()
+//  for i := 0; i < df.NumRows(); i++ {
 //    if i % 10 == 0 {
 //       m[i] = true
 //    }
-// }
-// df = df.MaskView(m)
+//  }
+//  df = df.MaskView(m)
 // Do not concurrently use this function unless you call ThreadSafeMasking(True)
 // first.
 func (df *DataFrame) ZeroMask() []bool {
@@ -65,11 +65,11 @@ func (df *DataFrame) ZeroMask() []bool {
 // EmptyMask returns a possibly pre-allocated mask for the MaskView function.
 // The values of the mask are not initialized and can be either true of false.
 // Intended use:
-// m := df.EmptyMask()
-// for i := 0; i < df.NumRows(); i++ {
+//  m := df.EmptyMask()
+//  for i := 0; i < df.NumRows(); i++ {
 //    m[i] = i % 10
-// }
-// df = df.MaskView(m)
+//  }
+//  df = df.MaskView(m)
 // Do not concurrently use this function unless you call ThreadSafeMasking(True)
 // first.
 func (df *DataFrame) EmptyMask() []bool {

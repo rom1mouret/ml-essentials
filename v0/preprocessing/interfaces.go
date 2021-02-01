@@ -17,7 +17,7 @@ type PreprocTraining interface {
   // The preprocessor typically chooses the columns that are relevant to the
   // transformation. If you want the transformation to apply on a subset of
   // columns, you can write it like that:
-  // preproc.Fit(df.ColumnView("this-column", "and-that-column"))
+  //  preproc.Fit(df.ColumnView("this-column", "and-that-column"))
   // This won't stop you from running the preprocessor on a wider dataframe:
   // preproc.TransformInplace(df) // here 'df' has more than 2 columns.
   Fit(df *dataframe.DataFrame) error
@@ -34,8 +34,8 @@ type Transform interface {
   // It returns an error if an error occurred, e.g. a categorical feature of df
   // contains an unknown category.
   // TransformView is functionally equivalent to:
-  // result := df.View()
-  // result.TransformInplace()
+  //  result := df.View()
+  //  result.TransformInplace()
   TransformView(df *dataframe.DataFrame) (*dataframe.DataFrame, error)
 }
 

@@ -81,10 +81,10 @@ func (df *DataFrame) Encode(newEncoding encoding.Encoding) error {
 // The given slice is copied, so it can safely be alteredafter this call.
 // If the column doesn't exist, it will create a new column.
 // Otherwise, it is functionally equivalent to:
-// access := df.Ints(colName)
-// for i := 0; i < len(values); i++ {
-//   access.Set(i, values[i])
-// }
+//  access := df.Ints(colName)
+//  for i := 0; i < len(values); i++ {
+//    access.Set(i, values[i])
+//  }
 func (df *DataFrame) OverwriteInts(colName string, values []int) {
   df.debugPrint("overwriting ints on")
   col := df.ints[colName]
@@ -101,10 +101,10 @@ func (df *DataFrame) OverwriteInts(colName string, values []int) {
 // The given slice is copied, so it can safely be altered after this call.
 // If the column doesn't exist, it will create a new column.
 // Otherwise, it is functionally equivalent to:
-// access := df.Floats(colName)
-// for i := 0; i < len(values); i++ {
-//   access.Set(i, values[i])
-// }
+//  access := df.Floats(colName)
+//  for i := 0; i < len(values); i++ {
+//    access.Set(i, values[i])
+//  }
 func (df *DataFrame) OverwriteFloats64(colName string, values []float64) {
   df.debugPrint("overwriting floats64 on")
   col := df.floats[colName]
@@ -121,10 +121,10 @@ func (df *DataFrame) OverwriteFloats64(colName string, values []float64) {
 // The given slice is copied, so it can safely be altered after this call.
 // If the column doesn't exist, it will create a new column.
 // Otherwise, it is functionally equivalent to:
-// access := df.Floats(colName)
-// for i := 0; i < len(values); i++ {
-//   access.Set(i, (float64) values[i])
-// }
+//  access := df.Floats(colName)
+//  for i := 0; i < len(values); i++ {
+//    access.Set(i, (float64) values[i])
+//  }
 func (df *DataFrame) OverwriteFloats32(colName string, values []float32) {
   df.debugPrint("overwriting floats32 on")
   col := df.floats[colName]
@@ -141,10 +141,10 @@ func (df *DataFrame) OverwriteFloats32(colName string, values []float32) {
 // The given slice is copied, so it can safely be altered after this call.
 // If the column doesn't exist, it will create a new column.
 // Otherwise, it is functionally equivalent to:
-// access := df.Bools(colName)
-// for i := 0; i < len(values); i++ {
-//   access.Set(i, values[i])
-// }
+//  access := df.Bools(colName)
+//  for i := 0; i < len(values); i++ {
+//    access.Set(i, values[i])
+//  }
 func (df *DataFrame) OverwriteBools(colName string, values []bool) {
   df.debugPrint("overwriting bools on")
   col := df.bools[colName]
@@ -161,10 +161,10 @@ func (df *DataFrame) OverwriteBools(colName string, values []bool) {
 // The given slice is copied, so it can safely be altered after this call.
 // If the column doesn't exist, it will create a new column.
 // Otherwise, it is functionally equivalent to:
-// access := df.Objects(colName)
-// for i := 0; i < len(values); i++ {
-//   access.Set(i, values[i])
-// }
+//  access := df.Objects(colName)
+//  for i := 0; i < len(values); i++ {
+//    access.Set(i, values[i])
+//  }
 // The third argument is only used if the column doesn't exist and has to be
 // created. It is the only way to mix strings with nil values and yet benefit
 // from dataframe operations specialized for strings such as HashStringsView.
@@ -190,10 +190,10 @@ func (df *DataFrame) OverwriteObjects(colName string, values []interface{},
 // after calling this function.
 // If the column doesn't exist, it will create a new column.
 // Otherwise, it is functionally equivalent to:
-// access := df.Objects(colName)
-// for i := 0; i < len(values); i++ {
-//   access.Set(i, values[i])
-// }
+//  access := df.Objects(colName)
+//  for i := 0; i < len(values); i++ {
+//    access.Set(i, values[i])
+//  }
 // If you need to overwrite strings with missing values, use OverwriteObjects
 // instead.
 func (df *DataFrame) OverwriteStrings(colName string, values []string) {

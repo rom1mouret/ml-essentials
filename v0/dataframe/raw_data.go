@@ -242,7 +242,7 @@ func (data *RawData) Drop(columns ...string) {
 // Rename changes the name of a column.
 // The new column will be of the same type and share the same data.
 // For example, if you execute:
-// df.View().Rename("apples", "oranges").Ints("oranges").Set(0, 42)
+//  df.View().Rename("apples", "oranges").Ints("oranges").Set(0, 42)
 // It will change df's number of apples to 42 at index=0.
 func (data *RawData) Rename(oldName string, newName string) {
   if data.sharedMaps {

@@ -89,7 +89,7 @@ Float64 were chosen over float32 for the sake of compatibility with [gonum](http
 
 Storing all the data slices as `interface{}` is sound.
 For one thing, this requires only one `map[string]interface{}`.
-By contrast, ml-essentials allocates 5 `map[string]T`, even if when empty.
+By contrast, ml-essentials allocates 5 `map[string]T`, even when empty.
 Also, some functions get to be very succinct, for instance
 `rename` can move the data from one column to another without ever knowing what
 type the data is of.
