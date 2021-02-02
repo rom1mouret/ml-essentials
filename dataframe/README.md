@@ -2,7 +2,7 @@ This README covers the basics.
 
 ### GoDoc
 
-[link](https://pkg.go.dev/github.com/rom1mouret/ml-essentials/dataframe)
+[v0.1.0](https://pkg.go.dev/github.com/rom1mouret/ml-essentials@v0.1.0/dataframe)
 
 ### Imports
 

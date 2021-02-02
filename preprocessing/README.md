@@ -1,6 +1,6 @@
 ### GoDoc
 
-[link](https://pkg.go.dev/github.com/rom1mouret/ml-essentials/preprocessing)
+[v0.1.0](https://pkg.go.dev/github.com/rom1mouret/ml-essentials@v0.1.0/preprocessing)
 
 ### Imports
 
