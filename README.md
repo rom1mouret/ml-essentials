@@ -35,10 +35,10 @@ View-returning functions are guaranteed not to copy any large chunk of data.
 
 ### Documentation and examples
 
-- [dataframe package](v0/dataframe/)
-- [preprocessing package](v0/preprocessing/)
-- [algorithms package](v0/algorithms/)
-- [A-to-Z example](v0/examples/linreg.go)
+- [dataframe package](dataframe/)
+- [preprocessing package](preprocessing/)
+- [algorithms package](algorithms/)
+- [A-to-Z example](examples/linreg.go)
 
 ### Benchmarks
 
