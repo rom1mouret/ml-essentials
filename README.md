@@ -9,7 +9,7 @@ It is also smaller, with a focus on simplicity, stability and clarity.
 
 I hope that ml-essentials is transparent enough for users to glance at their code and get a sense of what ml-essentials does under the hood and how much it is going to cost in CPU and RAM usage.
 To illustrate my point, I am enumerating below all the view-returning functions.
-Those features are only available through views, so the user has no choice but to spell out what his/her code should do. For instance, `shuffled := df.ShuffleView().Copy()` does exactly what it looks like.
+Those features are only available through views, so the user has no choice but to spell out what his/her code should do.
 
 ```
 (df *DataFrame) IndexView(indices []int) *DataFrame
